@@ -43,8 +43,8 @@ A multi-page marketing site for TechNova Institute, a fictional college for buil
 ├── contact.html
 ├── faculty.html
 ├── news.html
-├── style.css       # design tokens, layout, components, momiji leaf animation
-├── main.js         # nav, reveal animations, forms, filters, lightbox, momiji leaves
+├── style.css        
+├── main.js          
 └── README.md
 ```
 
@@ -62,6 +62,12 @@ Since this is a static site, it can be hosted anywhere that serves static files,
 - **GitHub Pages** — push to a repo, then enable Pages on the `main` branch (`/root`) in Settings → Pages
 - **Netlify / Vercel** — drag-and-drop the folder or connect the repo for automatic deploys
 - Any static file host / CDN
+
+## Contact
+
+- 📧 [aravindhans770@gmail.com](https://aravindhans770@gmail.com)
+- 💻 [github.com/aravindhans770-svg](https://github.com/aravindhans770-svg)
+- 🔗 [www.linkedin.com/in/aravindhan-s-646196387](https://www.linkedin.com/in/aravindhan-s-646196387)
 
 ## 📝 License
 
