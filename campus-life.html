@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Life — TechNova Institute</title>
+<meta name="description" content="Studios, housing, clubs, and the rhythm of daily life at TechNova Institute.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: var(--space-2);
+  }
+  .gallery-item { border-radius: var(--radius-sm); overflow: hidden; cursor: pointer; position: relative; }
+  .gallery-item.tall { grid-row: span 2; }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-item::after {
+    content: attr(data-label);
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0.6em 0.8em;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: white;
+    background: linear-gradient(transparent, rgba(10,14,39,0.75));
+  }
+  @media (max-width: 760px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+    .gallery-item.wide { grid-column: span 2; }
+  }
+  @media (max-width: 460px) {
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 180px; }
+    .gallery-item.wide, .gallery-item.tall { grid-column: span 1; grid-row: span 1; }
+  }
+  .lightbox {
+    position: fixed; inset: 0; background: rgba(10,14,39,0.92);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease);
+    padding: var(--space-4);
+  }
+  .lightbox.open { opacity: 1; pointer-events: auto; }
+  .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: var(--radius-sm); }
+  .lightbox-close {
+    position: absolute; top: 24px; right: 28px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+  .clubs-row { display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2); scrollbar-width: thin; }
+  .club-chip {
+    flex: 0 0 auto;
+    padding: 0.6em 1.2em;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    font-size: var(--fs-sm);
+    background: var(--color-white);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="6" fill="#0A0E27"/>
+          <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+        </svg>
+      </span>
+      TechNova Institute
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="admissions.html" class="btn btn-outline">Apply Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container reveal in-view">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Campus Life</div>
+      <span class="eyebrow">24-hour studio floor</span>
+      <h1>Life on Innovation Drive.</h1>
+      <p>Campus is small on purpose — fifteen minutes end to end on foot, built so the studio, the dorm, and the dining hall are never more than a short walk apart.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Around campus</span>
+        <h2>A look at where you'll spend your days.</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item wide tall" data-label="Main studio floor">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt="Students working in an open studio space" loading="lazy">
+        </div>
+        <div class="gallery-item" data-label="Fabrication lab">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Fabrication and robotics lab" loading="lazy">
+        </div>
+        <div class="gallery-item" data-label="Library">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80" alt="Campus library reading space" loading="lazy">
+        </div>
+        <div class="gallery-item" data-label="Courtyard">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" alt="Campus courtyard" loading="lazy">
+        </div>
+        <div class="gallery-item" data-label="Residence hall">
+          <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Student residence hall common room" loading="lazy">
+        </div>
+        <div class="gallery-item wide" data-label="Demo day">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80" alt="Students presenting projects at demo day" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOUSING / DINING -->
+  <section class="section-alt">
+    <div class="container split">
+      <div class="reveal">
+        <span class="eyebrow">Where you'll live</span>
+        <h2 style="font-size:var(--fs-2xl);margin-top:var(--space-2)">Housing built around the studio schedule.</h2>
+        <p style="color:var(--color-ink-soft);margin-top:var(--space-3)">Four residence halls, each three minutes from a studio entrance. First-years are grouped by program so your hallmates are also your project partners.</p>
+        <div class="tag-row">
+          <span class="tag">Single &amp; double rooms</span>
+          <span class="tag">24hr studio access badge</span>
+          <span class="tag">In-hall maker corners</span>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:120ms">
+        <div class="stat-grid-2">
+          <div class="card"><strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-indigo)">4</strong><span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Residence Halls</span></div>
+          <div class="card"><strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-coral)">3 min</strong><span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">To Nearest Studio</span></div>
+          <div class="card"><strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-indigo)">85%</strong><span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Live On-Campus</span></div>
+          <div class="card"><strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-coral)">6</strong><span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Dining Options</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUBS -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Beyond the studio</span>
+        <h2>60+ clubs and project teams.</h2>
+        <p>From competitive robotics to a student-run venture fund, most clubs at TechNova ship something tangible by the end of the term.</p>
+      </div>
+      <div class="clubs-row reveal">
+        <span class="club-chip">Formula Racing Team</span>
+        <span class="club-chip">AI Research Collective</span>
+        <span class="club-chip">Student Venture Fund</span>
+        <span class="club-chip">Game Dev Guild</span>
+        <span class="club-chip">Design Society</span>
+        <span class="club-chip">Hardware Hackers</span>
+        <span class="club-chip">Climate Tech Club</span>
+        <span class="club-chip">Competitive Robotics</span>
+        <span class="club-chip">Open Source Collective</span>
+        <span class="club-chip">Women in Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-alt">
+    <div class="container reveal" style="text-align:center">
+      <h2 style="font-size:var(--fs-xl)">Want to see it in person?</h2>
+      <p style="color:var(--color-ink-soft);margin:var(--space-2) auto var(--space-3);max-width:50ch">Campus tours run every weekday at 10am and 2pm — no appointment needed for prospective students.</p>
+      <a href="contact.html" class="btn btn-primary">Schedule a Visit</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="6" fill="#FAFAF8"/>
+              <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+            </svg>
+          </span>
+          TechNova Institute
+        </a>
+        <p>A college for builders. Engineering, design, and computing programs grounded in studio practice.</p>
+        <div class="social-row" style="margin-top:var(--space-3)">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="campus-life.html">Campus Life</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admissions.html#faq">FAQs</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <form id="newsletter-form">
+          <div style="display:flex;gap:0.5em">
+            <input type="email" placeholder="you@email.com" required aria-label="Email address" style="flex:1;padding:0.7em 1em;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:white;font-size:var(--fs-sm)">
+            <button type="submit" class="btn btn-primary" style="background:var(--color-indigo);padding:0.7em 1.1em">→</button>
+          </div>
+          <p class="newsletter-msg" style="display:none;font-size:var(--fs-xs);color:#8BE38B;margin-top:0.6em">Subscribed — welcome aboard.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TechNova Institute. All rights reserved.</span>
+      <span>123 Innovation Drive, Seoul · admissions@technova.edu</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Close image">&times;</button>
+  <img src="" alt="">
+</div>
+
+<button class="to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>

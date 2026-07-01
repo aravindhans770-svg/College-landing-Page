@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty — TechNova Institute</title>
+<meta name="description" content="Meet the faculty and researchers teaching at TechNova Institute — practitioners who still work in the field.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .filter-row { display: flex; gap: 0.6em; flex-wrap: wrap; margin-bottom: var(--space-4); }
+  .filter-btn {
+    font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 0.6em 1.2em; border-radius: 999px;
+    border: 1px solid var(--color-border); color: var(--color-ink-soft);
+    transition: all 0.25s var(--ease);
+  }
+  .filter-btn:hover { border-color: var(--color-navy); color: var(--color-navy); }
+  .filter-btn.active { background: var(--color-navy); color: white; border-color: var(--color-navy); }
+
+  .faculty-card { text-align: left; }
+  .faculty-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--color-indigo-soft); margin-bottom: var(--space-2); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; color:var(--color-indigo); font-size: var(--fs-md); }
+  .faculty-card .role { color: var(--color-indigo); font-weight: 500; font-size: var(--fs-xs); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6em; }
+  .faculty-dept { display: inline-block; margin-top: 0.8em; font-size: var(--fs-xs); color: var(--color-ink-soft); border-top: 1px solid var(--color-border); padding-top: 0.7em; width: 100%; }
+
+  .research-strip { display: flex; gap: var(--space-3); overflow-x: auto; padding-bottom: var(--space-2); }
+  .research-card { flex: 0 0 260px; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3); }
+  .research-card h4 { font-size: var(--fs-sm); margin-bottom: 0.4em; }
+  .research-card p { font-size: var(--fs-xs); color: var(--color-ink-soft); }
+  @media (max-width: 520px) {
+    .research-card { flex-basis: 220px; }
+    .faculty-avatar { width: 52px; height: 52px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="6" fill="#0A0E27"/>
+          <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+        </svg>
+      </span>
+      TechNova Institute
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="admissions.html" class="btn btn-outline">Apply Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container reveal in-view">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Faculty</div>
+      <span class="eyebrow">210 faculty · 12 labs</span>
+      <h1>People who still build.</h1>
+      <p>Every instructor at TechNova maintains active industry or research work outside the classroom — the studio model depends on it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-row reveal in-view">
+        <button class="filter-btn active" data-filter="all">All Faculty</button>
+        <button class="filter-btn" data-filter="computing">Computing</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="data">Data &amp; Business</button>
+      </div>
+
+      <div class="card-grid reveal-stagger">
+
+        <div class="card faculty-card reveal" style="--i:0" data-category="computing">
+          <div class="faculty-avatar">SY</div>
+          <h3>Dr. Sora Yoon</h3>
+          <p class="role">President · Distributed Systems</p>
+          <p>Former VP of Engineering at a Series D infrastructure company; founded TechNova's original night program.</p>
+          <span class="faculty-dept">School of Computing</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:1" data-category="computing">
+          <div class="faculty-avatar">JO</div>
+          <h3>James Okafor</h3>
+          <p class="role">Dean of Computing</p>
+          <p>Built distributed systems at scale before joining to lead the Computing curriculum and its industry studio track.</p>
+          <span class="faculty-dept">School of Computing</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:2" data-category="computing">
+          <div class="faculty-avatar">PK</div>
+          <h3>Dr. Priya Kapoor</h3>
+          <p class="role">Associate Professor · Machine Learning</p>
+          <p>Runs the Applied ML lab and consults part-time for a computer vision startup.</p>
+          <span class="faculty-dept">School of Computing</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:3" data-category="engineering">
+          <div class="faculty-avatar">MR</div>
+          <h3>Dr. Marcus Reyes</h3>
+          <p class="role">Professor · Robotics</p>
+          <p>Fifteen years designing autonomous navigation systems before moving into full-time teaching and research.</p>
+          <span class="faculty-dept">School of Engineering</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:4" data-category="engineering">
+          <div class="faculty-avatar">HL</div>
+          <h3>Dr. Hana Lim</h3>
+          <p class="role">Associate Professor · Electrical Engineering</p>
+          <p>Leads the power electronics lab, with active patents in embedded charging systems.</p>
+          <span class="faculty-dept">School of Engineering</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:5" data-category="design">
+          <div class="faculty-avatar">AT</div>
+          <h3>Aiko Tanaka-Wells</h3>
+          <p class="role">Associate Professor · Product Design</p>
+          <p>Design lead at a consumer hardware company two days a week; teaches interaction design the rest.</p>
+          <span class="faculty-dept">School of Design</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:6" data-category="design">
+          <div class="faculty-avatar">DC</div>
+          <h3>Diego Castillo</h3>
+          <p class="role">Assistant Professor · Industrial Design</p>
+          <p>Runs an independent product studio alongside teaching the material craft sequence.</p>
+          <span class="faculty-dept">School of Design</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:7" data-category="data">
+          <div class="faculty-avatar">ER</div>
+          <h3>Dr. Elena Restrepo</h3>
+          <p class="role">Dean of Research</p>
+          <p>Oversees all twelve labs and the senior published-research requirement.</p>
+          <span class="faculty-dept">School of Data &amp; Business</span>
+        </div>
+
+        <div class="card faculty-card reveal" style="--i:8" data-category="data">
+          <div class="faculty-avatar">NK</div>
+          <h3>Noah Kim</h3>
+          <p class="role">Assistant Professor · Venture Studies</p>
+          <p>Founded and sold a logistics startup; now leads the founding-team practicum.</p>
+          <span class="faculty-dept">School of Data &amp; Business</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH LABS -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Where the research happens</span>
+        <h2>Twelve active labs.</h2>
+        <p>Undergraduates join labs as early as sophomore year — not just as assistants, but as named contributors on published work.</p>
+      </div>
+      <div class="research-strip reveal">
+        <div class="research-card"><h4>Applied Machine Learning Lab</h4><p>Model deployment, evaluation, and real-time inference systems.</p></div>
+        <div class="research-card"><h4>Autonomous Systems Lab</h4><p>Navigation, control, and multi-robot coordination.</p></div>
+        <div class="research-card"><h4>Climate Systems Lab</h4><p>Sensing infrastructure and modeling for climate adaptation.</p></div>
+        <div class="research-card"><h4>Human-Computer Interaction Lab</h4><p>Interaction research grounded in accessibility and studio prototyping.</p></div>
+        <div class="research-card"><h4>Power Electronics Lab</h4><p>Embedded charging systems and grid-scale power conversion.</p></div>
+        <div class="research-card"><h4>Security Research Lab</h4><p>Offensive research and disclosure work with industry partners.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal" style="text-align:center">
+      <h2 style="font-size:var(--fs-xl)">Interested in joining a lab?</h2>
+      <p style="color:var(--color-ink-soft);margin:var(--space-2) auto var(--space-3);max-width:50ch">Prospective students can request a lab visit as part of a campus tour, or reach out directly to a faculty member.</p>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="6" fill="#FAFAF8"/>
+              <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+            </svg>
+          </span>
+          TechNova Institute
+        </a>
+        <p>A college for builders. Engineering, design, and computing programs grounded in studio practice.</p>
+        <div class="social-row" style="margin-top:var(--space-3)">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="campus-life.html">Campus Life</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admissions.html#faq">FAQs</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <form id="newsletter-form">
+          <div style="display:flex;gap:0.5em">
+            <input type="email" placeholder="you@email.com" required aria-label="Email address" style="flex:1;padding:0.7em 1em;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:white;font-size:var(--fs-sm)">
+            <button type="submit" class="btn btn-primary" style="background:var(--color-indigo);padding:0.7em 1.1em">→</button>
+          </div>
+          <p class="newsletter-msg" style="display:none;font-size:var(--fs-xs);color:#8BE38B;margin-top:0.6em">Subscribed — welcome aboard.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TechNova Institute. All rights reserved.</span>
+      <span>123 Innovation Drive, Seoul · admissions@technova.edu</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>

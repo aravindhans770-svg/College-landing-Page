@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumni — TechNova Institute</title>
+<meta name="description" content="Where TechNova Institute graduates go — companies, founders, and the alumni network.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .company-cloud { display: flex; flex-wrap: wrap; gap: 0.6em; }
+  .company-chip {
+    padding: 0.7em 1.3em; border-radius: 999px; border: 1px solid var(--color-border);
+    background: var(--color-white); font-size: var(--fs-sm); font-weight: 500; color: var(--color-navy);
+  }
+  .alumni-card { display: flex; flex-direction: column; height: 100%; }
+  .alumni-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--color-indigo-soft); margin-bottom: var(--space-2); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; color:var(--color-indigo); }
+  .alumni-role { font-size: var(--fs-xs); color: var(--color-indigo); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6em; }
+  .alumni-quote { font-size: var(--fs-sm); color: var(--color-ink-soft); margin-top: auto; padding-top: var(--space-2); border-top: 1px solid var(--color-border); font-style: normal; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="6" fill="#0A0E27"/>
+          <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+        </svg>
+      </span>
+      TechNova Institute
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="admissions.html" class="btn btn-outline">Apply Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container reveal in-view">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Alumni</div>
+      <span class="eyebrow">9,600+ graduates</span>
+      <h1>Where TechNova goes next.</h1>
+      <p>Graduates now work across every corner of the industry — some building products at scale, others starting the next company from scratch.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section>
+    <div class="container">
+      <div class="card-grid reveal-stagger">
+        <div class="card reveal" style="--i:0;text-align:center">
+          <strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-indigo)"><span data-counter="9600" data-suffix="+">0</span></strong>
+          <span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Alumni Worldwide</span>
+        </div>
+        <div class="card reveal" style="--i:1;text-align:center">
+          <strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-coral)"><span data-counter="340" data-suffix="+">0</span></strong>
+          <span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Founded Companies</span>
+        </div>
+        <div class="card reveal" style="--i:2;text-align:center">
+          <strong style="font-family:var(--font-display);font-size:var(--fs-xl);display:block;color:var(--color-indigo)"><span data-counter="42" data-suffix="">0</span></strong>
+          <span style="font-size:var(--fs-sm);color:var(--color-ink-soft)">Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE THEY WORK -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Where they land</span>
+        <h2>A partial list of where graduates work today.</h2>
+      </div>
+      <div class="company-cloud reveal">
+        <span class="company-chip">Samsung</span>
+        <span class="company-chip">Naver</span>
+        <span class="company-chip">Coupang</span>
+        <span class="company-chip">Kakao</span>
+        <span class="company-chip">Toss</span>
+        <span class="company-chip">Nexon</span>
+        <span class="company-chip">LG Electronics</span>
+        <span class="company-chip">SK Hynix</span>
+        <span class="company-chip">Hyundai Motor Group</span>
+        <span class="company-chip">40+ founded startups</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALUMNI PROFILES -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Alumni voices</span>
+        <h2>A few graduates, a few years out.</h2>
+      </div>
+      <div class="card-grid reveal-stagger">
+        <div class="card alumni-card reveal" style="--i:0">
+          <div class="alumni-avatar">YJ</div>
+          <h3>Yuna Jang</h3>
+          <p class="alumni-role">B.S. Computing '19 · Senior Engineer, Toss</p>
+          <p class="alumni-quote">The studio habit never left — I still prototype before I plan.</p>
+        </div>
+        <div class="card alumni-card reveal" style="--i:1">
+          <div class="alumni-avatar">RK</div>
+          <h3>Rahul Kapoor</h3>
+          <p class="alumni-role">B.Eng. Robotics '20 · Founder, Fieldworks Robotics</p>
+          <p class="alumni-quote">I built my first prototype in the TechNova shop during finals week.</p>
+        </div>
+        <div class="card alumni-card reveal" style="--i:2">
+          <div class="alumni-avatar">SL</div>
+          <h3>Sun-woo Lee</h3>
+          <p class="alumni-role">B.A. Product Design '21 · Design Lead, Kakao</p>
+          <p class="alumni-quote">My faculty advisor still reviews my work — twice a year, over coffee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-alt">
+    <div class="container reveal" style="text-align:center">
+      <h2 style="font-size:var(--fs-xl)">Are you a TechNova graduate?</h2>
+      <p style="color:var(--color-ink-soft);margin:var(--space-2) auto var(--space-3);max-width:50ch">Join the alumni directory to mentor current students, post job openings, or just stay in touch.</p>
+      <a href="contact.html" class="btn btn-primary">Join the Network</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="6" fill="#FAFAF8"/>
+              <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+            </svg>
+          </span>
+          TechNova Institute
+        </a>
+        <p>A college for builders. Engineering, design, and computing programs grounded in studio practice.</p>
+        <div class="social-row" style="margin-top:var(--space-3)">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="campus-life.html">Campus Life</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admissions.html#faq">FAQs</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <form id="newsletter-form">
+          <div style="display:flex;gap:0.5em">
+            <input type="email" placeholder="you@email.com" required aria-label="Email address" style="flex:1;padding:0.7em 1em;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:white;font-size:var(--fs-sm)">
+            <button type="submit" class="btn btn-primary" style="background:var(--color-indigo);padding:0.7em 1.1em">→</button>
+          </div>
+          <p class="newsletter-msg" style="display:none;font-size:var(--fs-xs);color:#8BE38B;margin-top:0.6em">Subscribed — welcome aboard.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TechNova Institute. All rights reserved.</span>
+      <span>123 Innovation Drive, Seoul · admissions@technova.edu</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>

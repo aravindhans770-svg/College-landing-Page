@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics — TechNova Institute</title>
+<meta name="description" content="Degree programs across Computing, Engineering, Design, and Data & Business at TechNova Institute.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .filter-row { display: flex; gap: 0.6em; flex-wrap: wrap; margin-bottom: var(--space-4); }
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.6em 1.2em;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    color: var(--color-ink-soft);
+    transition: all 0.25s var(--ease);
+  }
+  .filter-btn:hover { border-color: var(--color-navy); color: var(--color-navy); }
+  .filter-btn.active { background: var(--color-navy); color: white; border-color: var(--color-navy); }
+  .program-card { display: flex; flex-direction: column; height: 100%; }
+  .program-meta { display: flex; gap: 1em; margin-top: auto; padding-top: var(--space-2); font-size: var(--fs-xs); color: var(--color-ink-soft); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="6" fill="#0A0E27"/>
+          <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+        </svg>
+      </span>
+      TechNova Institute
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="admissions.html" class="btn btn-outline">Apply Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container reveal in-view">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Academics</div>
+      <span class="eyebrow">42 programs · 4 schools</span>
+      <h1>Pick a discipline, not a major code.</h1>
+      <p>Every program below runs through a working studio. Filter by school to see what each one actually builds.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-row reveal in-view">
+        <button class="filter-btn active" data-filter="all">All Programs</button>
+        <button class="filter-btn" data-filter="computing">Computing</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="data">Data &amp; Business</button>
+      </div>
+
+      <div class="card-grid reveal-stagger">
+
+        <div class="card reveal program-card" style="--i:0" data-category="computing">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div>
+          <h3>B.S. Software Engineering</h3>
+          <p>Full-stack systems, distributed architecture, and a senior capstone shipped to real users.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>120 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:1" data-category="computing">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+          <h3>B.S. AI &amp; Machine Learning</h3>
+          <p>Applied ML systems, model deployment, and a year-long research thread with faculty labs.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>124 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:2" data-category="computing">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h3>B.S. Cybersecurity</h3>
+          <p>Offensive and defensive security, taught through live red-team/blue-team exercises.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>122 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:3" data-category="engineering">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>B.Eng. Mechanical Engineering</h3>
+          <p>CAD-to-fabrication coursework with full shop access from semester one.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>128 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:4" data-category="engineering">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h3>B.Eng. Electrical Engineering</h3>
+          <p>Circuits, embedded systems, and power electronics with a dedicated hardware lab.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>126 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:5" data-category="engineering">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6"/></svg></div>
+          <h3>B.Eng. Robotics</h3>
+          <p>Mechatronics, control systems, and autonomous navigation, capped by a robot you actually ship.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>130 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:6" data-category="design">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>B.A. Product Design</h3>
+          <p>End-to-end product thinking — research, prototyping, and interaction design.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>118 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:7" data-category="design">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div>
+          <h3>B.A. Industrial Design</h3>
+          <p>Physical product design from sketch to manufactured prototype.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>120 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:8" data-category="data">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+          <h3>B.S. Data Science</h3>
+          <p>Statistics, data engineering, and analytics with capstone projects for partner companies.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>122 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:9" data-category="data">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+          <h3>B.S. Technology &amp; Venture</h3>
+          <p>Startup operations, product strategy, and a required founding-team practicum.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>118 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:10" data-category="data">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h3>B.S. Business Analytics</h3>
+          <p>Operations and analytics for technical teams running real companies.</p>
+          <div class="program-meta"><span>4 yrs</span><span>·</span><span>120 credits</span></div>
+        </div>
+
+        <div class="card reveal program-card" style="--i:11" data-category="computing">
+          <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+          <h3>M.S. Computer Science</h3>
+          <p>Graduate research track with thesis options across all twelve labs.</p>
+          <div class="program-meta"><span>2 yrs</span><span>·</span><span>48 credits</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container reveal" style="text-align:center">
+      <h2 style="font-size:var(--fs-xl)">Not sure which program fits?</h2>
+      <p style="color:var(--color-ink-soft);margin:var(--space-2) auto var(--space-3);max-width:50ch">Talk to an admissions counselor — they'll walk through your background and the studio that matches it.</p>
+      <a href="contact.html" class="btn btn-primary">Talk to Admissions</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="15" stroke="#3D5AFE" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="6" fill="#FAFAF8"/>
+              <circle cx="16" cy="1.5" r="2.2" fill="#FF6B4A"/>
+            </svg>
+          </span>
+          TechNova Institute
+        </a>
+        <p>A college for builders. Engineering, design, and computing programs grounded in studio practice.</p>
+        <div class="social-row" style="margin-top:var(--space-3)">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="campus-life.html">Campus Life</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admissions.html#faq">FAQs</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <form id="newsletter-form">
+          <div style="display:flex;gap:0.5em">
+            <input type="email" placeholder="you@email.com" required aria-label="Email address" style="flex:1;padding:0.7em 1em;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:white;font-size:var(--fs-sm)">
+            <button type="submit" class="btn btn-primary" style="background:var(--color-indigo);padding:0.7em 1.1em">→</button>
+          </div>
+          <p class="newsletter-msg" style="display:none;font-size:var(--fs-xs);color:#8BE38B;margin-top:0.6em">Subscribed — welcome aboard.</p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TechNova Institute. All rights reserved.</span>
+      <span>123 Innovation Drive, Seoul · admissions@technova.edu</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>
